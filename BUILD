@@ -3,7 +3,7 @@ load("@com_github_grpc_grpc//bazel:cc_grpc_library.bzl", "cc_grpc_library")
 proto_library(
     name = "foo_proto",
     srcs = ["foo.proto"],
-    deps = ["@wrong_name//opencensus/proto/trace/v1:trace_proto"],
+    deps = ["@wrong_name//src/opencensus/proto/trace/v1:trace_proto"],
 )
 
 cc_proto_library(
@@ -14,7 +14,7 @@ cc_proto_library(
 proto_library(
     name = "_foo_cc_only",
     srcs = ["foo.proto"],
-    deps = ["@wrong_name//opencensus/proto/trace/v1:trace_proto"],
+    deps = ["@wrong_name//src:opencensus/proto/trace/v1/trace.proto"],
 )
 
 cc_grpc_library(
