@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package foo;
+
+import "foo.proto";
+
+service MyService {
+  rpc MyRPC (foo.TraceRequest) returns (foo.TraceReply) {}
+}

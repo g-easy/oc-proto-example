@@ -11,6 +11,6 @@ message TraceRequest {
 message TraceReply {
 }
 
-service MyService {
-  rpc MyRPC (TraceRequest) returns (TraceReply) {}
-}
+//service MyService {
+//  rpc MyRPC (TraceRequest) returns (TraceReply) {}
+//}
