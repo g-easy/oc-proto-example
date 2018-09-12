@@ -1,3 +1,6 @@
+# Needed for strip_prefix.
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+
 http_archive(
     name = "com_github_grpc_grpc",
     urls = ["https://github.com/grpc/grpc/archive/master.tar.gz"],
@@ -17,8 +20,9 @@ grpc_deps()
 # This doesn't:
 git_repository(
     name = "wrong_name",
-    #strip_prefix = "opencensus-proto-master/src",  # Doesn't work.
-    #tag = "master",
+    strip_prefix = "src",
+    #tag = "master",  # Doesn't work.
+    #tag = "HEAD",  # Doesn't work.
     commit = "d3b7200dbd14743faa22c6642291d76030833cbd",
     remote = "https://github.com/census-instrumentation/opencensus-proto",
 )
