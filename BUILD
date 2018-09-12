@@ -11,6 +11,8 @@ cc_proto_library(
     deps = [":foo_proto"],
 )
 
+# This workaround was mentioned in
+# https://github.com/grpc/grpc/issues/14145
 proto_library(
     name = "_foo_cc_only",
     srcs = ["foo.proto"],
