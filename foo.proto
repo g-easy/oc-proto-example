@@ -2,9 +2,15 @@ syntax = "proto3";
 
 package foo;
 
-import "google/protobuf/timestamp.proto";
+import "opencensus/proto/trace/v1/trace.proto";
 
-message Interval {
-  google.protobuf.Timestamp start_time = 1;
-  google.protobuf.Timestamp end_time = 2;
+message TraceRequest {
+  repeated opencensus.proto.trace.v1.Span spans = 1;
+}
+
+message TraceReply {
+}
+
+service MyService {
+  rpc MyRPC (TraceRequest) returns (TraceReply) {}
 }
