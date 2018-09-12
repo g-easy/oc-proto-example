@@ -11,6 +11,5 @@ message TraceRequest {
 message TraceReply {
 }
 
-//service MyService {
-//  rpc MyRPC (TraceRequest) returns (TraceReply) {}
-//}
+// Service lives in another .proto file to work around
+// cc_grpc_library()
